@@ -1,0 +1,123 @@
+import Foundation
+
+//Ejercicio closure1
+  //Son similares a las funciones o clases anonimas, las podemos guardar en una variable o pasarlas como parametros de las funciones. Podemos usarlar como tipo de retorno en funciones asi como elementos de una coleccion
+
+  //Sintaxis de una closure1
+    { (parametro1:tipo, parametro2:tipo, parametroN:tipo)->Tipo de retorno in 
+      //cuerpo de la closure, lista de intrucciones
+
+    }
+  
+  //Ejemplo saludo
+    {()->String in 
+      return "Hola mundo"
+    }
+  
+
+  func getIntF(num:Int)->Int{
+    return Int.random(in:0...100) * num
+  }
+
+  print("El numero retornado es: \(getIntF(num:4))")
+
+  //Con clousures
+  let intClousure = {
+    (num:Int)->Int in
+    return Int.random(in:0...1000) * num
+  }
+
+  print("Dato regresado por la closure es: \(intClousure(4))")
+
+  //Clousure hola mundo
+  var mensaje = {
+    () in 
+    print ("Hola mundo desde una closure")
+  }
+
+  mensaje()
+
+  var cs = {
+    (num1:Int,num2:Int)->Int in
+    return num1 + num2
+  }
+
+  print(cs(4,3))
+  
+  //Closure 2
+  
+  //Diferenciar entre una funcion y closure
+  func getCuadradoEntero(numero: Int)->Int{
+    return numero * numero
+  }
+
+  //Invocar funcion 
+  print(getCuadradoEntero(numero:2))
+  print(getCuadradoEntero(numero:-10))
+
+  //Operaacion similar utilizando closure
+  var cuadradoNum = {
+    (numero:Int)->Int in
+    return numero * numero
+  }
+
+  print("--La misma operacion pero usando closure--")
+  print(cuadradoNum(2))
+  print(cuadradoNum(-10))
+
+//Ejercicio closure
+  //Operaaciones utilando closure
+  var suma = {
+    (num1:Int, num2:Int)->Int in
+    return num1 + num2
+  }
+  var resta = {
+    (num1:Int, num2:Int)->Int in
+    return num1 - num2
+  }
+  var multiplicar = {
+    (num1:Int, num2:Int)->Int in
+    return num1 * num2
+  }
+  var division = {
+    (num1:Int, num2:Int)->Float in
+    return Float(num1) / Float(num2)
+  }
+  print("--Operaciones basicas con closures--")
+  print("Introduce el primer numero:")
+  var n1 = Int(readLine()!)!
+  var n2 = Int(readLine()!)!
+  print("Los resultados son...")
+  print("La suma es: \(suma(n1,n2))")
+  print("La resta es: \(resta(n1,n2))")
+  print("La multiplicacion es: \(multiplicar(n1,n2))")
+  print("La division es: \(division(n1,n2))")
+  print("Fin del closure")
+  
+  //Ejercicio array con closure
+  //Crear un array tipo String
+  let nombres = ["Peludo","Peludillo","Peluchon","Pelochas"]
+  //Funcion para determine el mayor o menor y regrese un booleano
+  func menor(s1:String, s2:String)->Bool{
+    return s1 < s2
+  }
+  //Invocamos funcion
+  let nombresOrdenados = nombres.sorted(by:menor)
+  //Lo mismo pero con closure
+  let nombresOrdenados2 = nombres.sorted(by: {
+    (
+      s1:String,
+      s2:String
+    )->Bool in
+    return s1 < s2
+  })
+  //Reducir codigo porque swift soporta la inferencia de tipos de datoss
+  let nombresOrdenados3 = nombres.sorted(by:{(s1,s2)->Bool in return s1<s2})
+  //Reducir codigo quitando parentesis
+  let nombresOrdenados4 = nombres.sorted(by:{s1,s2->Bool in return s1<s2})
+  //Reducir codigo quitando return porque esta implicito en la closure
+  let nombresOrdenados5 = nombres.sorted(by:{s1,s2 in return s1<s2})
+  //Reducir codigo sustituyendo por lo argumentos abreviados
+  let nombresOrdenados6 = nombres.sorted(by:{$0<$1})
+  //Reducir codigo considerando solo el operador
+  let nombresOrdenados7 = nombres.sorted(by:{<})

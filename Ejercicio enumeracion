@@ -1,0 +1,69 @@
+//Ejercicio enumeración
+  /*¿Que es una enumeracion en swift?
+  *Es una estructura que nos permite almacenar un conjunto de datos o valores que se relacionan entre si
+
+  *Sintaxis:
+    enum < enumName> {
+      //Cuerpo de la enumeracion
+      case <caseName>
+      case <caseName>...
+    }
+  */
+
+  enum Movimientos {
+    case arriba
+    case abajo
+    case izquierda
+    case derecha
+    case hacia_dentro
+    case hacia_afuera
+    //case arriba,abajo...
+  }
+  //Crear variables de la estructura enum
+  let movimiento: Movimientos = Movimientos.abajo
+  print("El movimiento recuperado del enum es: \(movimiento)")
+  print("El id del elemento es: \(movimiento.hashValue)")
+  let movimiento1: Movimientos = Movimientos.izquierda
+  print("El movimiento recuperado del enum es: \(movimiento1) y su id es:  \(movimiento1.hashValue)")
+
+  let mov:Movimientos = Movimientos.abajo
+  //Seleccionamos elementos con base en su valor en el enum
+  switch mov{
+    case .arriba:
+    print("Me muevo hacia arriba")
+    case .abajo:
+    print("Me muevo hacia abajo")
+    case .izquierda:
+    print("Me muevo hacia la izquierda")
+    case .derecha:
+    print("Me muevo hacia la derecha")
+    case .hacia_dentro:
+    print("Me muevo hacia dentro")
+    case .hacia_afuera:
+    print("Me muevo hacia afuera")
+  }
+
+//Ejercicio enumeraciones2
+  struct Person{
+    enum status{
+      case soltero, casado, divorciado, viudo
+    }
+
+    let name:String 
+    let lastname: String
+    var edocivil: status
+
+    init (name:String, lastname:String, edocivil:status = .soltero){
+      self.name = name
+      self.lastname = lastname
+      self.edocivil = edocivil
+    }
+
+    var toString: String{
+      return "\(name) \(lastname) \(edocivil)"
+    }
+  }
+
+  var francisco = Person(name:"Francisco Javier", lastname:"Zuñiga Milanez", edocivil:.soltero)
+
+  print(francisco.toString)

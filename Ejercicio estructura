@@ -1,0 +1,27 @@
+import Foundation
+
+//Ejercicio crear estructura
+  struct Punto{
+    var x: Int
+    var y: Int
+
+    //Funcion init
+    init(vX: Int, vY: Int){
+      self.x = vX
+      self.y = vY
+    }
+  }
+
+  //Declarar datos tipo Punto
+  var pa = Punto(vX:10, vY:12)
+  print("Las coordenadas del punto pa son: \(pa.x) y \(pa.y)")
+
+  //Comprobar la diferencia con una clase
+  var pb = pa //paso por valor
+  print("Las coordenadas del punto pa son: \(pb.x) y \(pb.y)")
+
+  //Modificamos la coordenada del punto pa para Comprobar si son iguales
+  pa.x = 20
+  pa.y = 30
+  print("Las coordenadas del punto pa son: \(pa.x) y \(pa.y)")
+  print("Las coordenadas del punto pa son: \(pb.x) y \(pb.y)")

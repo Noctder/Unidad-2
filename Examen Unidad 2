@@ -1,0 +1,456 @@
+protocol  SerVivo  {
+    func respiro()
+    func meAlimento()
+    func habito()
+    func meReproduzco()
+    func meDesplazo()
+}
+
+//Clases heredadas de servivo
+class Ave: SerVivo{
+  private var comida: String
+
+  init(nuevoComida: String){
+    self.comida = nuevoComida
+  }
+
+  func setAve(nuevoComida: String){
+    self.comida = nuevoComida
+  }
+
+  func getAve() -> String {
+      return self.comida
+  }
+
+  //Metodos del protocolo en la clase principal
+  func respiro(){
+
+  }
+  func meAlimento(){
+
+  }
+  func habito(){
+
+  }
+  func meReproduzco(){
+
+  }
+  func meDesplazo(){
+
+  }
+}
+
+class Mamifero: SerVivo{
+  private var piel: String
+
+  init(nuevoPiel: String){
+    self.piel = nuevoPiel
+  }
+
+  func setMamifero(nuevoPiel: String){
+    self.piel = nuevoPiel
+  }
+
+  func getMamifero() -> String {
+      return self.piel
+  }
+
+  //Metodos del protocolo en la clase principal
+  func respiro(){
+
+  }
+  func meAlimento(){
+
+  }
+  func habito(){
+
+  }
+  func meReproduzco(){
+
+  }
+  func meDesplazo(){
+
+  }
+}
+
+class Reptil: SerVivo{
+  private var patas: String
+
+  init(nuevoPatas: String){
+    self.patas = nuevoPatas
+  }
+
+  func setReptil(nuevoPatas: String){
+    self.patas = nuevoPatas
+  }
+
+  func getReptil() -> String {
+      return self.patas
+  }
+
+  //Metodos del protocolo en la clase principal
+  func respiro(){
+
+  }
+  func meAlimento(){
+
+  }
+  func habito(){
+
+  }
+  func meReproduzco(){
+
+  }
+  func meDesplazo(){
+
+  }
+}
+
+class Amfibio: SerVivo{
+  private var veneno: String
+
+  init(nuevoVeneno: String){
+    self.veneno = nuevoVeneno
+  }
+
+  func setAmfibio(nuevoVeneno: String){
+    self.veneno = nuevoVeneno
+  }
+
+  func getAmfibio() -> String {
+      return self.veneno
+  }
+
+  //Metodos del protocolo en la clase principal
+  func respiro(){
+
+  }
+  func meAlimento(){
+
+  }
+  func habito(){
+
+  }
+  func meReproduzco(){
+
+  }
+  func meDesplazo(){
+
+  }
+}
+
+class Pez: SerVivo{
+  private var pielC: String
+
+  init(nuevoPielC: String){
+    self.pielC = nuevoPielC
+  }
+
+  func setPez(nuevoPielC: String){
+    self.pielC = nuevoPielC
+  }
+
+  func getPez() -> String {
+      return self.pielC
+  }
+
+  //Metodos del protocolo en la clase principal
+  func respiro(){
+
+  }
+  func meAlimento(){
+
+  }
+  func habito(){
+
+  }
+  func meReproduzco(){
+
+  }
+  func meDesplazo(){
+
+  }
+}
+
+class Insecto: SerVivo{
+  private var venenoC: String
+
+  init(nuevoVenenoC: String){
+    self.venenoC = nuevoVenenoC
+  }
+
+  func setInsecto(nuevoVenenoC: String){
+    self.venenoC = nuevoVenenoC
+  }
+
+  func getInsecto() -> String {
+      return self.venenoC
+  }
+
+  //Metodos del protocolo en la clase principal
+  func respiro(){
+
+  }
+  func meAlimento(){
+
+  }
+  func habito(){
+
+  }
+  func meReproduzco(){
+
+  }
+  func meDesplazo(){
+
+  }
+}
+//Clases heredadas de servivo y de su clase correspondiente
+class Buitre: Ave{
+  private var cabeza: String
+
+  init(nuevoCabeza: String, nuevoComida: String){
+    self.cabeza = nuevoCabeza
+    super.init(nuevoComida:nuevoComida)
+  }
+
+  func setBuitre(nuevoCabeza: String){
+    self.cabeza = nuevoCabeza
+  }
+
+  func getBuitre() -> String {
+      return self.cabeza
+  }
+
+  //Metodos del protocolo heredadas de la clase ave
+  override func respiro(){
+    print("Los Buitres respiran por los pulmones.")
+  }
+  override func meAlimento(){
+    print("Los buitres se alimentan de carroña.")
+  }
+  override func habito(){
+    print("Los buitres habitan en las zonas montañosas o en espacios abiertos.")
+  }
+  override func meReproduzco(){
+    print("Los buitres son ovíparos que se reproducen mediante huevos.")
+  }
+  override func meDesplazo(){
+    print("Los buitres vuelan para desplazarse.")
+  }
+}
+
+class Simio: Mamifero{
+  private var desplaza: String
+
+  init(nuevoDesplaza: String, nuevoPiel: String){
+    self.desplaza = nuevoDesplaza
+    super.init(nuevoPiel:nuevoPiel)
+  }
+
+  func setSimio(nuevoDesplaza: String){
+    self.desplaza = nuevoDesplaza
+  }
+
+  func getSimio() -> String {
+      return self.desplaza
+  }
+
+  //Metodos del protocolo heredadas de la clase ave
+  override func respiro(){
+    print("Los simios respiran por los pulmones.")
+  }
+  override func meAlimento(){
+    print("Los simios se alimentan de frutos e insectos.")
+  }
+  override func habito(){
+    print("Los simios habitan en la selva")
+  }
+
+  override func meReproduzco(){
+    print("Los simios son viviparos que se reproducen mediante la matriz.")
+  }
+  override func meDesplazo(){
+    print("Los simios caminan o usan lianas para desplazarse.")
+  }
+}
+
+class Serpiente: Reptil{
+  private var muda: String
+
+  init(nuevoMuda: String, nuevoPatas: String){
+    self.muda = nuevoMuda
+    super.init(nuevoPatas:nuevoPatas)
+  }
+
+  func setSerpiente(nuevoMuda: String){
+    self.muda = nuevoMuda
+  }
+
+  func getSerpiente() -> String {
+      return self.muda
+  }
+
+  //Metodos del protocolo heredadas de la clase ave
+  override func respiro(){
+    print("Las serpientes respiran por los pulmones.")
+  }
+  override func meAlimento(){
+    print("Las serpientes se alimentan de pequeños mamiferos y aves.")
+  }
+  override func habito(){
+    print("Las serpientes habitan en la selva y desiertos")
+  }
+
+  override func meReproduzco(){
+    print("Las serpientes son viviparos, oviparos o ovovivíparas dependiendo del tipo de especie.")
+  }
+  override func meDesplazo(){
+    print("Las serpientes se desplazan serpenteando con sus vertebras.")
+  }
+}
+
+class Sapo: Amfibio{
+  private var evolucion: String
+
+  init(nuevoEvolucion: String, nuevoVeneno: String){
+    self.evolucion = nuevoEvolucion
+    super.init(nuevoVeneno:nuevoVeneno)
+  }
+
+  func setSapo(nuevoEvolucion: String){
+    self.evolucion = nuevoEvolucion
+  }
+
+  func getSapo() -> String {
+      return self.evolucion
+  }
+
+  //Metodos del protocolo heredadas de la clase ave
+  override func respiro(){
+    print("Los sapos respiran por las branqueas al nacer y por pulmones al ser adultos.")
+  }
+  override func meAlimento(){
+    print("Los sapos se alimentan de insectos y roedores.")
+  }
+  override func habito(){
+    print("Los sapos habitan en los bosques")
+  }
+
+  override func meReproduzco(){
+    print("Los sapos oviparos por nacer de huevos.")
+  }
+  override func meDesplazo(){
+    print("Los sapos se desplazan saltando por tierra.")
+  }
+}
+
+class Pirana: Pez{
+  private var dientes: String
+
+  init(nuevoDientes: String, nuevoPielC: String){
+    self.dientes = nuevoDientes
+    super.init(nuevoPielC:nuevoPielC)
+  }
+
+  func setPirana(nuevoDientes: String){
+    self.dientes = nuevoDientes
+  }
+
+  func getPirana() -> String {
+      return self.dientes
+  }
+
+  //Metodos del protocolo heredadas de la clase ave
+  override func respiro(){
+    print("Las pirañas respiran por las branqueas.")
+  }
+  override func meAlimento(){
+    print("Las pirañas se alimentan de pequeños peces o presas mayores cuando atacan juntos.")
+  }
+  override func habito(){
+    print("Las pirañas habitan en los rios")
+  }
+
+  override func meReproduzco(){
+    print("Las pirañas son oviparos por nacer de huevos.")
+  }
+  override func meDesplazo(){
+    print("Las pirañas se desplazan nadando.")
+  }
+}
+
+class Abeja: Insecto{
+  private var peso: String
+
+  init(nuevoPeso: String, nuevoVenenoC: String){
+    self.peso = nuevoPeso
+    super.init(nuevoVenenoC:nuevoVenenoC)
+  }
+
+  func setAbeja(nuevoEvolucion: String){
+    self.peso = nuevoEvolucion
+  }
+
+  func getAbeja() -> String {
+      return self.peso
+  }
+
+  //Metodos del protocolo heredadas de la clase ave
+  override func respiro(){
+    print("Las abejas respiran por los pulmones.")
+  }
+  override func meAlimento(){
+    print("Las abejas se alimentan de miel y polen.")
+  }
+  override func habito(){
+    print("Las abejas habitan en los bosques, huertos y pradros")
+  }
+
+  override func meReproduzco(){
+    print("Las abejas son oviparos por nacer de huevos.")
+  }
+  override func meDesplazo(){
+    print("Las abejas se desplazan volando por aire.")
+  }
+}
+
+func ImprimirDatosSerVivo(serVivo: SerVivo){
+  print(serVivo.respiro())
+  print(serVivo.meAlimento())
+  print(serVivo.habito())
+  print(serVivo.meReproduzco())
+  print(serVivo.meDesplazo())
+}
+
+//Creando objetos de seres vivos
+var buitre = Buitre(nuevoCabeza: "Cabeza lampiña", nuevoComida:"Comer carroña")
+var simio = Simio(nuevoDesplaza: "Lianas de selvas", nuevoPiel:"Peludos")
+var serpiente = Serpiente(nuevoMuda: "Mudan de piel cada 4-8 semanas", nuevoPatas:"ninguna posee patas")
+var sapo = Sapo(nuevoEvolucion: "Evolucionan de acuaticos a terrestres", nuevoVeneno:"Suelen ser venenosos")
+var pirana = Pirana(nuevoDientes: "Tienen mas de 4000 dientes", nuevoPielC:"Tiene escamas")
+var abeja = Abeja(nuevoPeso: "A pesar de su peso puede volar desafiando la fisica", nuevoVenenoC:"Suelen ser venenosos y al picar estas mueren")
+//Imprimir los datos del ser vivo a partir de la funcion ImprimirDatosSerVivo
+print("---Los datos del buitre son: ---")
+ImprimirDatosSerVivo(serVivo: buitre)
+print(buitre.getAve())
+print(buitre.getBuitre())
+print("---Los datos del simio son: ---")
+ImprimirDatosSerVivo(serVivo: simio)
+print(simio.getMamifero())
+print(simio.getSimio())
+print("---Los datos de la serpiente son: ---")
+ImprimirDatosSerVivo(serVivo: serpiente)
+print(serpiente.getReptil())
+print(serpiente.getSerpiente())
+print("---Los datos del sapo son: ---")
+ImprimirDatosSerVivo(serVivo: sapo)
+print(sapo.getAmfibio())
+print(sapo.getSapo())
+print("---Los datos de la piraña son: ---")
+ImprimirDatosSerVivo(serVivo: pirana)
+print(pirana.getPez())
+print(pirana.getPirana())
+print("---Los datos de la abeja son: ---")
+ImprimirDatosSerVivo(serVivo: abeja)
+print(abeja.getInsecto())
+print(abeja.getAbeja())

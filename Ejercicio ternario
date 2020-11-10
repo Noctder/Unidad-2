@@ -1,0 +1,33 @@
+import Foundation
+
+//Ejercicio ternario
+  //El operador ternario es una alternativa mas simple y elegante a la estructura if.. then simple
+
+  var edad: Int = 17
+  //haciendo la seleccion mediante operador ternario el operador ternario debe regresar una String con un mensaje
+  var mayorEdad: String = edad >= 18 ? "Si eres mayor de edad" : "No es mayor de edad"
+  print("mayorEdad es igual a: \(mayorEdad)")
+
+  //Ternario con numeros enteros
+  var n1:Int = 20
+  var n2:Int = 30
+  //Ternario
+  var res: String = n1 >= n2 ? "El mayor es n1 o n1 y n2 son iguales" : "El mayor es n2"
+  print(res)
+
+//Ejercicio teclado ternario
+  var a : Int = 0
+  var b : Int = 0
+  var c : Int = 0
+
+  print("Ingrese el valor de la variable a")
+  a = Int(readLine()!)!    
+  print("Ingrese el valor de la variable b")
+  b = Int(readLine()!)!    
+  print("Ingrese el valor de la variable c")
+  c = Int(readLine()!)!    
+  a = a*a
+  b = b*b
+  c = c*c
+  var res: String = a+b == c ? "El resultado prueba el teorema de pitagoras" : "El resultado no prueba el teorema de pitagoras"
+  print(res)

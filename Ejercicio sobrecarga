@@ -1,0 +1,22 @@
+//Ejercicio sobrecarga
+  //Mostrar la sobrecarga de funciones
+  func multiplicar(primero:Int, segundo:Int)->Int{
+    return primero * segundo
+  }
+
+  func multiplicar(primero:Float,segundo:Float)->Float{
+    return primero * segundo
+  }
+
+  //Funcion sobrecargada
+  func multiplicar(primero:Int,segundo:Int, tercer:Int)->Int{
+    return primero*segundo*tercer
+  }
+
+  //Invocar funcion sobrecargada es el numero de parametros
+  print(multiplicar(primero:2,segundo:3))
+  print(multiplicar(primero:2,segundo:3,tercer:10))
+
+  //Invocar funcion sobrecargada que se diferencie por el tipo de parametros
+  print(multiplicar(primero:23,segundo:67))
+  print(multiplicar(primero:12.05,segundo:-67.32))

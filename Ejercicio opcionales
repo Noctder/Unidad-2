@@ -1,0 +1,37 @@
+//Ejercicio Opcionales
+  //Los opcionales son tipos de datos en swift que éuden llevar o no un valor.
+  //Normalmente se les asocia el valor de nil para indicar que no tienen asignado un valor.
+  //Si requerimos asignarle un valor lo asignamos
+  //Registro de los trabajadores de la empresa
+  //Nombre1, Nombre2, apellido1, apellido2
+  //Francisco Javier Zuñiga Milanez
+
+  /*var prueba:String
+    var opcional:String?
+    //Asignamos valores
+    prueba = "hola"
+    print("El valor de la variable prueba es: \(prueba)")
+    //Asignamos valores a opcional
+    opcional = "hi all"
+    //print("El valor del opcional es: \(opcional!)")
+
+    //Asignando valores de otra manera
+    if let opc = opcional{
+      print(opc)
+    }else{
+      print("El opcional tiene un valor igual a Nil")
+    }
+  */
+  
+  //Probando opcionales con enteros
+  var num1:Int
+  var num2:Int?
+  //Asignamos valores
+  num1 = 50
+  num2 = 20
+  print(num1)
+  if (num2 == nil){
+    print("num2 tiene el valor de nil")
+  }else{
+    print(num2!)
+  }
